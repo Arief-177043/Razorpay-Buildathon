@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  ::selection {
+    @apply bg-brand-200 text-ink-900;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-ink-200 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-ink-300; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-ink-100 shadow-sm;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:border-ink-200;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn bg-ink-100 text-ink-700 hover:bg-ink-200 active:scale-[0.98];
+  }
+  .btn-success {
+    @apply btn bg-success-600 text-white hover:bg-success-700 active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply btn bg-error-50 text-error-700 hover:bg-error-100 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-ink-100 active:scale-[0.98];
+  }
+  .input {
+    @apply w-full px-3 py-2 rounded-lg border border-ink-200 bg-white text-sm text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+  .badge-success {
+    @apply badge bg-success-100 text-success-700;
+  }
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  .badge-error {
+    @apply badge bg-error-100 text-error-700;
+  }
+  .badge-brand {
+    @apply badge bg-brand-100 text-brand-700;
+  }
+  .badge-neutral {
+    @apply badge bg-ink-100 text-ink-600;
+  }
+  .stat-value {
+    @apply text-2xl font-semibold text-ink-900 tracking-tight;
+  }
+  .stat-label {
+    @apply text-xs font-medium text-ink-500 uppercase tracking-wide;
+  }
+}

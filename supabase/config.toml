@@ -1,0 +1,5 @@
+[functions.razorflow-agent]
+verify_jwt = false
+
+[functions.razorflow-webhook]
+verify_jwt = false
